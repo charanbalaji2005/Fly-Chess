@@ -1,0 +1,284 @@
+{
+ "provenance": "approximation",
+ "note": "Procedural scaffold. The repository connectome contains no soma coordinates or neuropil annotations, so these compartments are illustrative geometry, not registered anatomy. No neuron is assigned membership and no statistic is computed over them.",
+ "frame": {
+  "x": "fly right",
+  "y": "dorsal",
+  "z": "anterior",
+  "unitApproxMicrons": 60
+ },
+ "compartments": [
+  {
+   "key": "lamina_r",
+   "label": "Lamina (R)",
+   "group": "optic",
+   "side": "R",
+   "center": [
+    4.95,
+    0.2,
+    0.0
+   ],
+   "radii": [
+    0.45,
+    1.85,
+    1.45
+   ]
+  },
+  {
+   "key": "lamina_l",
+   "label": "Lamina (L)",
+   "group": "optic",
+   "side": "L",
+   "center": [
+    -4.95,
+    0.2,
+    0.0
+   ],
+   "radii": [
+    0.45,
+    1.85,
+    1.45
+   ]
+  },
+  {
+   "key": "medulla_r",
+   "label": "Medulla (R)",
+   "group": "optic",
+   "side": "R",
+   "center": [
+    3.75,
+    0.15,
+    0.0
+   ],
+   "radii": [
+    1.3,
+    2.0,
+    1.6
+   ]
+  },
+  {
+   "key": "medulla_l",
+   "label": "Medulla (L)",
+   "group": "optic",
+   "side": "L",
+   "center": [
+    -3.75,
+    0.15,
+    0.0
+   ],
+   "radii": [
+    1.3,
+    2.0,
+    1.6
+   ]
+  },
+  {
+   "key": "lobula_r",
+   "label": "Lobula (R)",
+   "group": "optic",
+   "side": "R",
+   "center": [
+    2.7,
+    -0.05,
+    0.4
+   ],
+   "radii": [
+    0.9,
+    1.35,
+    1.0
+   ]
+  },
+  {
+   "key": "lobula_l",
+   "label": "Lobula (L)",
+   "group": "optic",
+   "side": "L",
+   "center": [
+    -2.7,
+    -0.05,
+    0.4
+   ],
+   "radii": [
+    0.9,
+    1.35,
+    1.0
+   ]
+  },
+  {
+   "key": "lobula_plate_r",
+   "label": "Lobula plate (R)",
+   "group": "optic",
+   "side": "R",
+   "center": [
+    2.75,
+    0.2,
+    -0.6
+   ],
+   "radii": [
+    0.62,
+    1.15,
+    0.62
+   ]
+  },
+  {
+   "key": "lobula_plate_l",
+   "label": "Lobula plate (L)",
+   "group": "optic",
+   "side": "L",
+   "center": [
+    -2.75,
+    0.2,
+    -0.6
+   ],
+   "radii": [
+    0.62,
+    1.15,
+    0.62
+   ]
+  },
+  {
+   "key": "protocerebrum",
+   "label": "Protocerebrum",
+   "group": "central",
+   "side": "M",
+   "center": [
+    0.0,
+    0.35,
+    0.0
+   ],
+   "radii": [
+    2.65,
+    2.05,
+    1.85
+   ]
+  },
+  {
+   "key": "central_complex",
+   "label": "Central complex",
+   "group": "central",
+   "side": "M",
+   "center": [
+    0.0,
+    0.8,
+    -0.15
+   ],
+   "radii": [
+    0.9,
+    0.6,
+    0.55
+   ]
+  },
+  {
+   "key": "mb_calyx_r",
+   "label": "MB calyx (R)",
+   "group": "mushroom",
+   "side": "R",
+   "center": [
+    1.55,
+    1.05,
+    -0.95
+   ],
+   "radii": [
+    0.58,
+    0.52,
+    0.52
+   ]
+  },
+  {
+   "key": "mb_calyx_l",
+   "label": "MB calyx (L)",
+   "group": "mushroom",
+   "side": "L",
+   "center": [
+    -1.55,
+    1.05,
+    -0.95
+   ],
+   "radii": [
+    0.58,
+    0.52,
+    0.52
+   ]
+  },
+  {
+   "key": "mb_lobes_r",
+   "label": "MB peduncle & lobes (R)",
+   "group": "mushroom",
+   "side": "R",
+   "center": [
+    1.2,
+    0.1,
+    0.7
+   ],
+   "radii": [
+    0.34,
+    0.95,
+    1.15
+   ]
+  },
+  {
+   "key": "mb_lobes_l",
+   "label": "MB peduncle & lobes (L)",
+   "group": "mushroom",
+   "side": "L",
+   "center": [
+    -1.2,
+    0.1,
+    0.7
+   ],
+   "radii": [
+    0.34,
+    0.95,
+    1.15
+   ]
+  },
+  {
+   "key": "antennal_lobe_r",
+   "label": "Antennal lobe (R)",
+   "group": "sensory",
+   "side": "R",
+   "center": [
+    1.05,
+    -0.9,
+    1.2
+   ],
+   "radii": [
+    0.66,
+    0.66,
+    0.66
+   ]
+  },
+  {
+   "key": "antennal_lobe_l",
+   "label": "Antennal lobe (L)",
+   "group": "sensory",
+   "side": "L",
+   "center": [
+    -1.05,
+    -0.9,
+    1.2
+   ],
+   "radii": [
+    0.66,
+    0.66,
+    0.66
+   ]
+  },
+  {
+   "key": "sez",
+   "label": "SEZ (gnathal ganglia)",
+   "group": "sez",
+   "side": "M",
+   "center": [
+    0.0,
+    -1.7,
+    0.25
+   ],
+   "radii": [
+    1.85,
+    1.15,
+    1.45
+   ]
+  }
+ ]
+}

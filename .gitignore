@@ -1,0 +1,24 @@
+__pycache__
+*.egg-info
+
+code/output*
+
+*.parquet
+data/ground-truth-comparison.json
+data/results/*
+!data/results/nature_2026_07/
+data/results/nature_2026_07/analysis*
+data/results/nature_2026_07/logs*
+data/results/nature_2026_07/archive*
+
+data/weight_coo.pkl
+data/weight_csr.pkl
+
+# Dependencies / build output
+node_modules/
+web/dist/
+tsconfig.tsbuildinfo
+
+# Local caches (too large for git)
+.cache/
+.cache_*.npy

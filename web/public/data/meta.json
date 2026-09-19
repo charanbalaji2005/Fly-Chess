@@ -1,0 +1,39 @@
+{
+ "builtAt": "2026-09-18T19:05:05",
+ "buildSeconds": 85.0,
+ "neuronCount": 138639,
+ "connectionCount": 15091983,
+ "synapseCount": 54492920,
+ "completedCount": 138639,
+ "exportedEdgeCount": 200000,
+ "moduleCount": 16,
+ "sezCellTypeCount": 106,
+ "sezNeuronCount": 305,
+ "sources": {
+  "neurons": "data/2025_Completeness_783.csv",
+  "connectivity": "data/2025_Connectivity_783.parquet",
+  "cellTypes": "data/sez_neurons.pickle"
+ },
+ "provenance": {
+  "flywireIds": "measured",
+  "degrees": "measured",
+  "weights": "measured",
+  "polarity": "measured",
+  "edges": "measured (filtered to strongest by synapse count)",
+  "positions": "derived (force-directed layout, not soma coordinates)",
+  "modules": "derived (k-means on the force-directed layout)",
+  "anatomy": "approximation (procedural scaffold)"
+ },
+ "layout": {
+  "method": "force-directed SGD with negative sampling (LargeVis family)",
+  "epochs": 300,
+  "topKPerNeuron": 12,
+  "layoutEdgeCount": 2360386,
+  "separationRatio": 0.1326,
+  "meanConnectedPairDistance": 0.3961,
+  "meanRandomPairDistance": 2.9863,
+  "separationNote": "Mean distance between connected neurons divided by mean distance between random neurons. Below 1 means the layout encodes real connectivity; ~1 would mean it encodes nothing.",
+  "seed": 20260918,
+  "warning": "Coordinates encode connectivity proximity, not anatomical position. The repository ships no soma coordinates."
+ }
+}

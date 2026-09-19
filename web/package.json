@@ -1,0 +1,33 @@
+{
+  "name": "fly-brain-lab",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Interactive 3D explorer for the FlyWire Drosophila connectome and the repository's spiking network model",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "test": "esbuild src/game/__tests__/chessEngine.test.ts src/game/__tests__/chessAi.test.ts src/game/__tests__/carry.test.ts src/game/__tests__/store.test.ts src/game/__tests__/hud.test.ts src/game/__tests__/responsive.test.ts src/game/__tests__/stadium.test.ts src/game/__tests__/boardfeedback.test.ts --bundle --format=esm --platform=node --jsx=automatic --outdir=.testbuild --out-extension:.js=.mjs --log-level=warning \"--banner:js=import{createRequire as __cr}from'module';const require=__cr(import.meta.url);\" && node --test .testbuild/chessEngine.test.mjs .testbuild/chessAi.test.mjs .testbuild/carry.test.mjs .testbuild/store.test.mjs .testbuild/hud.test.mjs .testbuild/responsive.test.mjs .testbuild/stadium.test.mjs .testbuild/boardfeedback.test.mjs"
+  },
+  "dependencies": {
+    "@react-three/drei": "^9.122.0",
+    "@react-three/fiber": "^8.17.10",
+    "chess.js": "^1.4.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "three": "^0.170.0",
+    "zustand": "^5.0.2"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.0.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@types/three": "^0.170.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "tailwindcss": "^4.0.0",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.5"
+  }
+}

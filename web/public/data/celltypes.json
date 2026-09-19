@@ -1,0 +1,946 @@
+{
+ "provenance": "measured",
+ "source": "data/sez_neurons.pickle",
+ "note": "Named subesophageal-zone cell types shipped with the repository. These are the only region-style annotations the datasets contain.",
+ "cellTypes": [
+  {
+   "name": "Asteroid",
+   "neuronIndices": [
+    62149,
+    19715
+   ],
+   "missing": 1
+  },
+  {
+   "name": "FMIn",
+   "neuronIndices": [
+    120843,
+    21518
+   ],
+   "missing": 0
+  },
+  {
+   "name": "Fdg",
+   "neuronIndices": [
+    135578,
+    106485
+   ],
+   "missing": 0
+  },
+  {
+   "name": "G2N_1",
+   "neuronIndices": [
+    62234,
+    45977
+   ],
+   "missing": 0
+  },
+  {
+   "name": "OinkT",
+   "neuronIndices": [
+    57317,
+    106417,
+    950,
+    129160,
+    17352,
+    127967
+   ],
+   "missing": 0
+  },
+  {
+   "name": "Salivary_MN13",
+   "neuronIndices": [],
+   "missing": 2
+  },
+  {
+   "name": "TH_VUM",
+   "neuronIndices": [],
+   "missing": 1
+  },
+  {
+   "name": "TPN4",
+   "neuronIndices": [
+    19724
+   ],
+   "missing": 1
+  },
+  {
+   "name": "aDT6",
+   "neuronIndices": [
+    97251,
+    122379,
+    13652,
+    76841,
+    133512,
+    125850,
+    930,
+    104623,
+    117194,
+    122708
+   ],
+   "missing": 1
+  },
+  {
+   "name": "aSG1",
+   "neuronIndices": [
+    45742
+   ],
+   "missing": 1
+  },
+  {
+   "name": "aSG7",
+   "neuronIndices": [
+    121388,
+    54120,
+    69806,
+    46006,
+    17323
+   ],
+   "missing": 0
+  },
+  {
+   "name": "amulet",
+   "neuronIndices": [
+    676,
+    117257
+   ],
+   "missing": 0
+  },
+  {
+   "name": "aster",
+   "neuronIndices": [
+    22174,
+    63710,
+    39123
+   ],
+   "missing": 1
+  },
+  {
+   "name": "bamboo",
+   "neuronIndices": [],
+   "missing": 2
+  },
+  {
+   "name": "basket",
+   "neuronIndices": [
+    79176,
+    76372,
+    18914,
+    63810,
+    86458,
+    113008,
+    102658,
+    42294,
+    103875,
+    50265,
+    86062,
+    26754,
+    83202
+   ],
+   "missing": 2
+  },
+  {
+   "name": "bluebell",
+   "neuronIndices": [
+    117103,
+    102610
+   ],
+   "missing": 0
+  },
+  {
+   "name": "bobber",
+   "neuronIndices": [
+    50356
+   ],
+   "missing": 0
+  },
+  {
+   "name": "box",
+   "neuronIndices": [
+    123494,
+    112142
+   ],
+   "missing": 0
+  },
+  {
+   "name": "bract",
+   "neuronIndices": [
+    77052,
+    133843,
+    81527,
+    8403
+   ],
+   "missing": 0
+  },
+  {
+   "name": "bridle",
+   "neuronIndices": [
+    81589,
+    123499,
+    132626,
+    124710
+   ],
+   "missing": 0
+  },
+  {
+   "name": "brontosaraus",
+   "neuronIndices": [
+    82908,
+    7738,
+    125272,
+    6796,
+    110331,
+    120969,
+    120653,
+    76237,
+    85355,
+    39445,
+    47245
+   ],
+   "missing": 1
+  },
+  {
+   "name": "broom",
+   "neuronIndices": [
+    67714,
+    12903
+   ],
+   "missing": 0
+  },
+  {
+   "name": "buddy",
+   "neuronIndices": [
+    79397,
+    33253,
+    135567
+   ],
+   "missing": 0
+  },
+  {
+   "name": "clavicle",
+   "neuronIndices": [
+    109396,
+    137753
+   ],
+   "missing": 0
+  },
+  {
+   "name": "coy",
+   "neuronIndices": [
+    33865
+   ],
+   "missing": 0
+  },
+  {
+   "name": "crab",
+   "neuronIndices": [
+    75059,
+    117237
+   ],
+   "missing": 0
+  },
+  {
+   "name": "cradle",
+   "neuronIndices": [
+    46630,
+    72834
+   ],
+   "missing": 0
+  },
+  {
+   "name": "damsel",
+   "neuronIndices": [
+    60876
+   ],
+   "missing": 1
+  },
+  {
+   "name": "diatom",
+   "neuronIndices": [
+    77725,
+    121780,
+    130374,
+    53652,
+    84807,
+    2087,
+    125462,
+    88740,
+    85542,
+    30361,
+    40041,
+    50896,
+    124485
+   ],
+   "missing": 1
+  },
+  {
+   "name": "doublescoop",
+   "neuronIndices": [
+    43820
+   ],
+   "missing": 1
+  },
+  {
+   "name": "earmuff",
+   "neuronIndices": [
+    91447,
+    11239,
+    118410
+   ],
+   "missing": 1
+  },
+  {
+   "name": "eiffel",
+   "neuronIndices": [
+    81807,
+    93698
+   ],
+   "missing": 0
+  },
+  {
+   "name": "fluff",
+   "neuronIndices": [
+    122330,
+    107125
+   ],
+   "missing": 0
+  },
+  {
+   "name": "foxglove",
+   "neuronIndices": [
+    10680,
+    89992
+   ],
+   "missing": 0
+  },
+  {
+   "name": "fudog",
+   "neuronIndices": [
+    110426,
+    14770
+   ],
+   "missing": 0
+  },
+  {
+   "name": "gallinule",
+   "neuronIndices": [],
+   "missing": 10
+  },
+  {
+   "name": "gazebo",
+   "neuronIndices": [
+    130593
+   ],
+   "missing": 1
+  },
+  {
+   "name": "genie",
+   "neuronIndices": [
+    75234,
+    119422,
+    23433,
+    82046
+   ],
+   "missing": 0
+  },
+  {
+   "name": "gnome",
+   "neuronIndices": [
+    136476,
+    8798
+   ],
+   "missing": 0
+  },
+  {
+   "name": "good_dog",
+   "neuronIndices": [
+    105405
+   ],
+   "missing": 1
+  },
+  {
+   "name": "gumdrop",
+   "neuronIndices": [
+    102306,
+    100023
+   ],
+   "missing": 0
+  },
+  {
+   "name": "handle",
+   "neuronIndices": [
+    46003,
+    87442,
+    94367
+   ],
+   "missing": 1
+  },
+  {
+   "name": "handup",
+   "neuronIndices": [
+    12006,
+    13380
+   ],
+   "missing": 0
+  },
+  {
+   "name": "haystack",
+   "neuronIndices": [
+    40236,
+    22525
+   ],
+   "missing": 0
+  },
+  {
+   "name": "horn",
+   "neuronIndices": [
+    97084,
+    48602,
+    886
+   ],
+   "missing": 0
+  },
+  {
+   "name": "horntail",
+   "neuronIndices": [
+    103280,
+    6027
+   ],
+   "missing": 0
+  },
+  {
+   "name": "horseshoe",
+   "neuronIndices": [
+    498,
+    221,
+    82820,
+    48852,
+    106577,
+    99589,
+    61657,
+    45570
+   ],
+   "missing": 1
+  },
+  {
+   "name": "hound",
+   "neuronIndices": [
+    89577
+   ],
+   "missing": 1
+  },
+  {
+   "name": "hyacinth",
+   "neuronIndices": [
+    137590,
+    58414,
+    66843,
+    74436,
+    41864,
+    99198
+   ],
+   "missing": 0
+  },
+  {
+   "name": "justice",
+   "neuronIndices": [
+    21091
+   ],
+   "missing": 1
+  },
+  {
+   "name": "kelp",
+   "neuronIndices": [
+    117349,
+    55274,
+    121314,
+    13607
+   ],
+   "missing": 0
+  },
+  {
+   "name": "kitty",
+   "neuronIndices": [
+    133399,
+    69228,
+    83905
+   ],
+   "missing": 1
+  },
+  {
+   "name": "knees",
+   "neuronIndices": [
+    84084,
+    7698
+   ],
+   "missing": 0
+  },
+  {
+   "name": "kokopelli",
+   "neuronIndices": [
+    18407,
+    114771
+   ],
+   "missing": 0
+  },
+  {
+   "name": "landslide",
+   "neuronIndices": [
+    114867
+   ],
+   "missing": 1
+  },
+  {
+   "name": "lion",
+   "neuronIndices": [
+    51970,
+    100571
+   ],
+   "missing": 0
+  },
+  {
+   "name": "mandala",
+   "neuronIndices": [
+    77007,
+    126823,
+    106935,
+    107861,
+    119529,
+    9070,
+    137078,
+    30865,
+    74233
+   ],
+   "missing": 1
+  },
+  {
+   "name": "marge",
+   "neuronIndices": [
+    42662
+   ],
+   "missing": 1
+  },
+  {
+   "name": "meteor",
+   "neuronIndices": [],
+   "missing": 2
+  },
+  {
+   "name": "mime",
+   "neuronIndices": [
+    85281,
+    123243,
+    65417,
+    116058,
+    125064,
+    18613,
+    56415,
+    47611,
+    99342,
+    123354,
+    65323,
+    116205,
+    94398
+   ],
+   "missing": 1
+  },
+  {
+   "name": "mist",
+   "neuronIndices": [
+    121985
+   ],
+   "missing": 1
+  },
+  {
+   "name": "moor",
+   "neuronIndices": [
+    118214,
+    12411
+   ],
+   "missing": 0
+  },
+  {
+   "name": "mothership",
+   "neuronIndices": [
+    45081,
+    133525
+   ],
+   "missing": 0
+  },
+  {
+   "name": "mute",
+   "neuronIndices": [
+    97024
+   ],
+   "missing": 1
+  },
+  {
+   "name": "nagini",
+   "neuronIndices": [
+    73641,
+    84645
+   ],
+   "missing": 0
+  },
+  {
+   "name": "nori",
+   "neuronIndices": [
+    28697,
+    99854,
+    99927
+   ],
+   "missing": 0
+  },
+  {
+   "name": "oink",
+   "neuronIndices": [
+    111403,
+    28697,
+    118325,
+    99854,
+    76029,
+    99927,
+    16709,
+    76178
+   ],
+   "missing": 1
+  },
+  {
+   "name": "oval",
+   "neuronIndices": [
+    74775
+   ],
+   "missing": 1
+  },
+  {
+   "name": "pSG1",
+   "neuronIndices": [
+    9694,
+    42479,
+    100385,
+    46404
+   ],
+   "missing": 2
+  },
+  {
+   "name": "peacock",
+   "neuronIndices": [
+    12892,
+    62103,
+    35648
+   ],
+   "missing": 1
+  },
+  {
+   "name": "peafowl",
+   "neuronIndices": [
+    54183
+   ],
+   "missing": 1
+  },
+  {
+   "name": "peahen",
+   "neuronIndices": [
+    33693,
+    17111,
+    79557,
+    32535
+   ],
+   "missing": 0
+  },
+  {
+   "name": "phantom",
+   "neuronIndices": [
+    123305,
+    26115
+   ],
+   "missing": 0
+  },
+  {
+   "name": "planter",
+   "neuronIndices": [
+    31108,
+    86426
+   ],
+   "missing": 0
+  },
+  {
+   "name": "pleco",
+   "neuronIndices": [
+    24300,
+    11479
+   ],
+   "missing": 0
+  },
+  {
+   "name": "pringle",
+   "neuronIndices": [
+    47955,
+    12047
+   ],
+   "missing": 0
+  },
+  {
+   "name": "puddle",
+   "neuronIndices": [
+    84138,
+    28686
+   ],
+   "missing": 0
+  },
+  {
+   "name": "rattle",
+   "neuronIndices": [
+    98749,
+    124039
+   ],
+   "missing": 0
+  },
+  {
+   "name": "rocket",
+   "neuronIndices": [
+    12228,
+    127484,
+    91794,
+    126363,
+    123300,
+    8949,
+    125168,
+    27356,
+    118942,
+    132191,
+    125779,
+    40744
+   ],
+   "missing": 6
+  },
+  {
+   "name": "rose",
+   "neuronIndices": [
+    64389
+   ],
+   "missing": 0
+  },
+  {
+   "name": "roundup",
+   "neuronIndices": [
+    4477,
+    59455
+   ],
+   "missing": 0
+  },
+  {
+   "name": "ruby",
+   "neuronIndices": [
+    53490
+   ],
+   "missing": 1
+  },
+  {
+   "name": "seagull",
+   "neuronIndices": [
+    75686
+   ],
+   "missing": 0
+  },
+  {
+   "name": "shark",
+   "neuronIndices": [
+    118810,
+    42282,
+    4905
+   ],
+   "missing": 1
+  },
+  {
+   "name": "sink_sync",
+   "neuronIndices": [
+    56016,
+    123801,
+    85827,
+    135930
+   ],
+   "missing": 0
+  },
+  {
+   "name": "snake",
+   "neuronIndices": [
+    104990,
+    73364
+   ],
+   "missing": 0
+  },
+  {
+   "name": "spirit",
+   "neuronIndices": [
+    49406,
+    17435
+   ],
+   "missing": 0
+  },
+  {
+   "name": "spray",
+   "neuronIndices": [
+    5972
+   ],
+   "missing": 1
+  },
+  {
+   "name": "sullivan",
+   "neuronIndices": [
+    89104,
+    125315
+   ],
+   "missing": 0
+  },
+  {
+   "name": "sundrop",
+   "neuronIndices": [
+    74786,
+    4138
+   ],
+   "missing": 0
+  },
+  {
+   "name": "tentacular",
+   "neuronIndices": [
+    44807,
+    49025
+   ],
+   "missing": 0
+  },
+  {
+   "name": "tinctoria",
+   "neuronIndices": [
+    73668,
+    100978,
+    33909
+   ],
+   "missing": 1
+  },
+  {
+   "name": "tophat",
+   "neuronIndices": [
+    55628,
+    125764,
+    43471,
+    138358
+   ],
+   "missing": 0
+  },
+  {
+   "name": "trident",
+   "neuronIndices": [
+    64769
+   ],
+   "missing": 0
+  },
+  {
+   "name": "trogon",
+   "neuronIndices": [
+    104747
+   ],
+   "missing": 0
+  },
+  {
+   "name": "trumpet",
+   "neuronIndices": [
+    133855,
+    87978
+   ],
+   "missing": 0
+  },
+  {
+   "name": "tulip",
+   "neuronIndices": [
+    32140,
+    41714
+   ],
+   "missing": 0
+  },
+  {
+   "name": "tundra",
+   "neuronIndices": [
+    49992,
+    49771
+   ],
+   "missing": 0
+  },
+  {
+   "name": "turner",
+   "neuronIndices": [
+    10213
+   ],
+   "missing": 1
+  },
+  {
+   "name": "twirl",
+   "neuronIndices": [
+    119432
+   ],
+   "missing": 0
+  },
+  {
+   "name": "usnea",
+   "neuronIndices": [
+    130674,
+    109395
+   ],
+   "missing": 0
+  },
+  {
+   "name": "vice",
+   "neuronIndices": [
+    49200,
+    54843,
+    15546,
+    59673,
+    10666
+   ],
+   "missing": 1
+  },
+  {
+   "name": "wafflecone",
+   "neuronIndices": [
+    68805,
+    74723
+   ],
+   "missing": 0
+  },
+  {
+   "name": "weaver",
+   "neuronIndices": [
+    27880,
+    93655,
+    121288,
+    111050,
+    21379,
+    12874,
+    15771,
+    71185,
+    87605,
+    38942,
+    17259
+   ],
+   "missing": 2
+  },
+  {
+   "name": "web",
+   "neuronIndices": [
+    81537,
+    55407,
+    80216,
+    68709
+   ],
+   "missing": 2
+  },
+  {
+   "name": "whisker",
+   "neuronIndices": [
+    82426,
+    82347
+   ],
+   "missing": 0
+  }
+ ]
+}

@@ -1,0 +1,176 @@
+@import 'tailwindcss';
+
+/*
+ * Fly Brain Lab design tokens.
+ *
+ * The instrument is dark because the subject is emissive: neurons are drawn as
+ * light, and a dark ground is what lets a dim neuron and a spiking one be told
+ * apart at a glance. Chrome is deliberately low-contrast so the 3D view is the
+ * brightest thing on screen.
+ */
+
+:root {
+  --void: #04060a;
+  --panel: rgba(12, 17, 25, 0.82);
+  --panel-solid: #0a0e15;
+  --panel-raised: rgba(20, 27, 38, 0.9);
+  --hairline: rgba(148, 176, 214, 0.14);
+  --hairline-strong: rgba(148, 176, 214, 0.28);
+
+  --ink: #e6edf7;
+  --ink-dim: #97a6bd;
+  --ink-faint: #64748b;
+
+  /* provenance palette: each category keeps one hue everywhere it appears */
+  --measured: #35d0c0;
+  --simulated: #ffab3d;
+  --derived: #a78bfa;
+  --approx: #64748b;
+
+  --excitatory: #4dd4ac;
+  --inhibitory: #f2637e;
+  --selection: #ffd166;
+  --focus: #7dd3fc;
+
+  --grid: 4px;
+}
+
+/* Light mode is not offered: a pale ground destroys the emissive encoding the
+   whole visualisation depends on. The value below only affects form controls. */
+:root { color-scheme: dark; }
+
+* { box-sizing: border-box; }
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+body {
+  background: var(--void);
+  color: var(--ink);
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  font-size: 13px;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Numbers are read by eye and compared column-wise, so they are always
+   tabular and monospaced. */
+.num {
+  font-family: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+
+.label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.panel {
+  background: var(--panel);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  border: 1px solid var(--hairline);
+}
+
+.hair-t { border-top: 1px solid var(--hairline); }
+.hair-b { border-bottom: 1px solid var(--hairline); }
+.hair-l { border-left: 1px solid var(--hairline); }
+.hair-r { border-right: 1px solid var(--hairline); }
+
+/* focus ring: visible on keyboard navigation, invisible to the mouse */
+:focus { outline: none; }
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 1px;
+  border-radius: 2px;
+}
+
+/* thin scrollbars that do not steal attention from the data */
+::-webkit-scrollbar { width: 9px; height: 9px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 176, 214, 0.16);
+  border-radius: 99px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+::-webkit-scrollbar-thumb:hover { background: rgba(148, 176, 214, 0.3); background-clip: content-box; }
+
+input[type='range'] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 2px;
+  background: var(--hairline-strong);
+  border-radius: 99px;
+}
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--ink);
+  border: none;
+  cursor: pointer;
+}
+input[type='range']::-moz-range-thumb {
+  width: 11px; height: 11px; border-radius: 50%;
+  background: var(--ink); border: none; cursor: pointer;
+}
+
+/* Honour the OS reduced-motion setting: idle camera drift, the propagation
+   animation and panel transitions all check this. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+@keyframes pulse-dim {
+  0%, 100% { opacity: 0.35; }
+  50% { opacity: 1; }
+}
+.pulse { animation: pulse-dim 1.6s ease-in-out infinite; }
+
+@keyframes sweep {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(300%); }
+}
+.sweep::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  width: 33%;
+  background: linear-gradient(90deg, transparent, rgba(125, 211, 252, 0.55), transparent);
+  animation: sweep 1.3s ease-in-out infinite;
+}
+
+/* --- HUD motion -----------------------------------------------------------
+   Two small keyframes, used by the status dot and by anything that appears
+   rather than being there all along. Everything else in the HUD transitions
+   with CSS transitions, not animations: a panel that animates continuously
+   is a panel that keeps asking for attention it does not need.
+---------------------------------------------------------------------------*/
+
+@keyframes hudPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%      { opacity: 0.45; transform: scale(0.82); }
+}
+
+@keyframes hudRise {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [style*="hudPulse"], [style*="hudRise"] { animation: none !important; }
+}
