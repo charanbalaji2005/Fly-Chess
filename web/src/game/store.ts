@@ -113,6 +113,8 @@ export interface GameStore {
   paused: boolean;
   /** The single open overlay, if any. Only one at a time, by construction. */
   uiPanel: UiPanel;
+  /** Whether the right-side Drosophila Whole-Brain Connectome Visualizer is open. */
+  brainVisOpen: boolean;
   /** Transient banner near the top of the screen. */
   notification: Notification | null;
   settings: GameSettings;
@@ -174,6 +176,8 @@ export interface GameStore {
   /** Bring the camera back to the board view. */
   resetCamera: () => void;
   togglePanel: (panel: UiPanel) => void;
+  setBrainVisOpen: (open: boolean) => void;
+  toggleBrainVis: () => void;
   notify: (text: string, tone?: Notification['tone']) => void;
   dismissNotification: (id: number) => void;
   resign: () => void;
@@ -256,6 +260,7 @@ export const useGame = create<GameStore>((set, get) => ({
   camera: 'BOARD',
   paused: false,
   uiPanel: 'NONE',
+  brainVisOpen: true,
   notification: null,
   settings: DEFAULT_SETTINGS,
   config: DEFAULT_CONFIG,
@@ -321,7 +326,14 @@ export const useGame = create<GameStore>((set, get) => ({
 
   // clicking the open panel's own button closes it, which is what every
   // drawer in every application does and what people expect
-  togglePanel: (panel) => set((s) => ({ uiPanel: s.uiPanel === panel ? 'NONE' : panel })),
+  togglePanel: (panel) =>
+    set((s) => ({
+      uiPanel: s.uiPanel === panel ? 'NONE' : panel,
+      brainVisOpen: panel === 'NEURAL' ? true : s.brainVisOpen,
+    })),
+
+  setBrainVisOpen: (open) => set({ brainVisOpen: open }),
+  toggleBrainVis: () => set((s) => ({ brainVisOpen: !s.brainVisOpen })),
 
   notify: (text, tone = 'INFO') =>
     set({ notification: { id: notificationId++, text, tone } }),
@@ -648,14 +660,28 @@ export const useGame = create<GameStore>((set, get) => ({
     set({ aiThinking: true, phase: 'THINKING' });
     get().emitNeuralEvent({ type: 'BOARD_SCAN' });
 
+    const startTime = performance.now();
+
     try {
       const searchResult: AiSearchResult = await computeAiMove(chess, currentPlayer.aiLevel);
+
+      // Give player a visible window to watch the fly's brain fire and calculate!
+      const minThinkingTime =
+        currentPlayer.aiLevel === 'BEGINNER' ? 650 :
+        currentPlayer.aiLevel === 'EASY' ? 850 :
+        currentPlayer.aiLevel === 'NORMAL' ? 1100 : 1350;
+
+      const elapsed = performance.now() - startTime;
+      if (elapsed < minThinkingTime) {
+        await new Promise((resolve) => setTimeout(resolve, minThinkingTime - elapsed));
+      }
+
       set({
         aiThinking: false,
         aiMetrics: {
           depth: searchResult.depth,
           nodes: searchResult.nodes,
-          timeMs: searchResult.timeMs,
+          timeMs: Math.round(performance.now() - startTime),
           score: searchResult.score,
         },
       });

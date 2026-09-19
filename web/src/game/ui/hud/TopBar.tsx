@@ -33,6 +33,8 @@ export function TopBar({ onExit }: { onExit: () => void }) {
   const uiPanel = useGame((s) => s.uiPanel);
   const togglePanel = useGame((s) => s.togglePanel);
   const setUiPanel = useGame((s) => s.setUiPanel);
+  const brainVisOpen = useGame((s) => s.brainVisOpen);
+  const toggleBrainVis = useGame((s) => s.toggleBrainVis);
   const camera = useGame((s) => s.camera);
   const setCamera = useGame((s) => s.setCamera);
   const aiLevel = useGame((s) => s.config.aiLevel);
@@ -157,9 +159,9 @@ export function TopBar({ onExit }: { onExit: () => void }) {
         </div>
 
         <IconButton
-          title="Neural state"
-          active={uiPanel === 'NEURAL'}
-          onClick={() => togglePanel('NEURAL')}
+          title="FlyWire Connectome Brain Map (Hide/Show)"
+          active={brainVisOpen}
+          onClick={toggleBrainVis}
         >
           <BrainIcon />
         </IconButton>

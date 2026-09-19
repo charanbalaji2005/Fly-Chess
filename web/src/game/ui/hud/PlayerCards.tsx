@@ -37,6 +37,7 @@ export function PlayerCards() {
   const timed = useGame((s) => s.config.timePreset) !== 'CASUAL';
   const aiThinking = useGame((s) => s.aiThinking);
   const over = useGame((s) => s.status.isOver);
+  const brainVisOpen = useGame((s) => s.brainVisOpen);
 
   return (
     <>
@@ -56,7 +57,12 @@ export function PlayerCards() {
 
       <div
         className="pointer-events-auto absolute"
-        style={{ right: 12, bottom: 14, zIndex: 10 }}
+        style={{
+          right: brainVisOpen ? 432 : 12,
+          bottom: 14,
+          zIndex: 10,
+          transition: 'right 0.3s ease',
+        }}
       >
         <Card
           player={players[1]}

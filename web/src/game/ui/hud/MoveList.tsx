@@ -32,6 +32,7 @@ export function MoveList() {
   const moveHistory = useGame((s) => s.moveHistory);
   const uiPanel = useGame((s) => s.uiPanel);
   const togglePanel = useGame((s) => s.togglePanel);
+  const brainVisOpen = useGame((s) => s.brainVisOpen);
 
   const pairs = useMemo(() => pairsOf(moveHistory.map((m) => m.san)), [moveHistory]);
   const expanded = uiPanel === 'HISTORY';
@@ -52,7 +53,14 @@ export function MoveList() {
       className="pointer-events-auto absolute"
       // capped at 196px so it never reaches the board, on a tablet or a
       // widescreen monitor
-      style={{ right: 12, top: 118, width: 196, maxWidth: '22vw', zIndex: 10 }}
+      style={{
+        right: brainVisOpen ? 432 : 12,
+        top: 118,
+        width: 196,
+        maxWidth: '22vw',
+        zIndex: 10,
+        transition: 'right 0.3s ease',
+      }}
     >
       <div style={{ ...panel(), padding: '9px 10px 8px' }}>
         <div className="flex items-center justify-between" style={{ marginBottom: 6 }}>

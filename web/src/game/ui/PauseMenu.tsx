@@ -5,7 +5,7 @@
 import { useGame } from '../store';
 import { Card, GameButton } from './kit';
 
-export function PauseMenu({ onOpenLab }: { onOpenLab: () => void }) {
+export function PauseMenu() {
   const setPaused = useGame((s) => s.setPaused);
   const setScreen = useGame((s) => s.setScreen);
   const startMatch = useGame((s) => s.startMatch);
@@ -24,10 +24,6 @@ export function PauseMenu({ onOpenLab }: { onOpenLab: () => void }) {
 
           <GameButton full onClick={() => startMatch({})}>
             Restart Match
-          </GameButton>
-
-          <GameButton variant="ghost" full onClick={onOpenLab}>
-            Connectome Neural Lab
           </GameButton>
 
           <div className="my-1.5 h-[1px] bg-slate-800" />

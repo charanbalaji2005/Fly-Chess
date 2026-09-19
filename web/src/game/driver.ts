@@ -79,8 +79,9 @@ export function useGameKeys(): void {
         case 'u':
           undoMove();
           break;
+        case 'b':
         case 'n':
-          togglePanel('NEURAL');
+          useGame.getState().toggleBrainVis();
           break;
         case 'm':
           togglePanel('HISTORY');

@@ -41,6 +41,7 @@ import {
 import { MoveList } from './hud/MoveList';
 import { MoveResult } from './hud/MoveResult';
 import { NeuralDrawer, NeuralReadout } from './hud/NeuralDrawer';
+import { BrainSidePanel } from './hud/BrainSidePanel';
 import { Notice, GameOverOverlay } from './hud/Notices';
 import { PlayerCards } from './hud/PlayerCards';
 import { SettingsDrawer } from './hud/SettingsDrawer';
@@ -48,7 +49,7 @@ import { TopBar } from './hud/TopBar';
 import { useViewport } from './hud/useViewport';
 import { SettingsControls } from './SettingsPanel';
 
-export function GameHud({ onOpenLab }: { onOpenLab: () => void }) {
+export function GameHud() {
   const viewport = useViewport();
   const setScreen = useGame((s) => s.setScreen);
   useTurnNotices();
@@ -60,7 +61,6 @@ export function GameHud({ onOpenLab }: { onOpenLab: () => void }) {
       {mobile ? (
         <MobileLayout
           portrait={viewport.portrait}
-          onOpenLab={onOpenLab}
           onExit={() => setScreen('MENU')}
         />
       ) : (
@@ -71,8 +71,10 @@ export function GameHud({ onOpenLab }: { onOpenLab: () => void }) {
               does not, so there it is a sheet reached from the action bar */}
           <MoveList />
           <BottomBar />
-          <NeuralDrawer onOpenLab={onOpenLab} />
+          <NeuralDrawer />
           <SettingsDrawer />
+          {/* 3D Google FlyWire Connectome Visualizer side panel */}
+          <BrainSidePanel />
         </>
       )}
 
@@ -92,11 +94,9 @@ export function GameHud({ onOpenLab }: { onOpenLab: () => void }) {
  */
 function MobileLayout({
   portrait,
-  onOpenLab,
   onExit,
 }: {
   portrait: boolean;
-  onOpenLab: () => void;
   onExit: () => void;
 }) {
   const uiPanel = useGame((s) => s.uiPanel);
@@ -116,7 +116,7 @@ function MobileLayout({
       </MobileSheet>
 
       <MobileSheet open={uiPanel === 'NEURAL'} title="Neural state" onClose={close}>
-        <NeuralReadout onOpenLab={onOpenLab} />
+        <NeuralReadout />
       </MobileSheet>
 
       <MobileSheet open={uiPanel === 'SETTINGS'} title="Settings" onClose={close}>

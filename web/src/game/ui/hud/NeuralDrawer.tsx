@@ -24,13 +24,13 @@ const CHANNEL_COLOR: Record<string, string> = {
   reward: '#f0b429',
 };
 
-export function NeuralDrawer({ onOpenLab }: { onOpenLab: () => void }) {
+export function NeuralDrawer() {
   const uiPanel = useGame((s) => s.uiPanel);
   const setUiPanel = useGame((s) => s.setUiPanel);
 
   return (
     <Drawer open={uiPanel === 'NEURAL'} title="Neural state" onClose={() => setUiPanel('NONE')}>
-      <NeuralReadout onOpenLab={onOpenLab} />
+      <NeuralReadout />
     </Drawer>
   );
 }
@@ -41,7 +41,7 @@ export function NeuralDrawer({ onOpenLab }: { onOpenLab: () => void }) {
  * Shared by the desktop drawer and the phone's bottom sheet, so the two can
  * never show different channels.
  */
-export function NeuralReadout({ onOpenLab }: { onOpenLab: () => void }) {
+export function NeuralReadout() {
   const neuralState = useGame((s) => s.neuralState);
   const carry = useGame((s) => s.carry);
   const aiThinking = useGame((s) => s.aiThinking);
@@ -58,6 +58,8 @@ export function NeuralReadout({ onOpenLab }: { onOpenLab: () => void }) {
       : selectedSquare
         ? 'Target acquisition'
         : 'Idle';
+
+  const toggleBrainVis = useGame((s) => s.toggleBrainVis);
 
   return (
     <>
@@ -125,8 +127,8 @@ export function NeuralReadout({ onOpenLab }: { onOpenLab: () => void }) {
       )}
 
       <div style={{ marginTop: 12 }}>
-        <TextButton onClick={onOpenLab} title="Open the whole-brain visualisation">
-          Whole brain
+        <TextButton onClick={toggleBrainVis} title="Open the 3D whole-brain connectome visualization">
+          FlyWire 3D Connectome Map
         </TextButton>
       </div>
 

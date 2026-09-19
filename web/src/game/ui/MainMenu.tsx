@@ -5,7 +5,7 @@
 import { useGame } from '../store';
 import { Card, GameButton } from './kit';
 
-export function MainMenu({ onOpenLab }: { onOpenLab: () => void }) {
+export function MainMenu() {
   const startMatch = useGame((s) => s.startMatch);
   const setScreen = useGame((s) => s.setScreen);
 
@@ -20,7 +20,7 @@ export function MainMenu({ onOpenLab }: { onOpenLab: () => void }) {
             <p className="mt-2 text-xs leading-relaxed text-slate-400">
               Championship 3D chess stadium where Drosophila flies act as the player agents
               physically moving chess pieces, powered by authoritative FIDE rules, 6 genuine AI
-              difficulty levels, and a live neural decision core.
+              difficulty levels, and a live FlyWire whole-brain connectome map.
             </p>
           </div>
 
@@ -36,12 +36,6 @@ export function MainMenu({ onOpenLab }: { onOpenLab: () => void }) {
 
             <GameButton full onClick={() => setScreen('SETUP')}>
               Match Setup & AI Level
-            </GameButton>
-
-            <div className="my-2 h-[1px] bg-slate-800" />
-
-            <GameButton variant="ghost" full onClick={onOpenLab}>
-              Connectome Neural Lab
             </GameButton>
           </div>
 

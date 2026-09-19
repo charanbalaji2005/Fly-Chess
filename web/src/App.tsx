@@ -18,19 +18,9 @@
  * parsed connectome both survive the switch.
  */
 
-import { useState } from 'react';
-
 import { GameApp } from './game/GameApp';
-import { LabApp } from './LabApp';
-
-type View = 'GAME' | 'LAB';
 
 export default function App() {
-  const [view, setView] = useState<View>('GAME');
-
-  if (view === 'LAB') {
-    return <LabApp onExit={() => setView('GAME')} />;
-  }
-
-  return <GameApp onOpenLab={() => setView('LAB')} />;
+  return <GameApp />;
 }
+
